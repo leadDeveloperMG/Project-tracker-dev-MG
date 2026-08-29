@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
 import { auth } from "@/auth";
 import { hasPermission, type Permission } from "@/lib/rbac";
+import { logger } from "@/lib/logger";
 import type { Role } from "@/lib/constants";
 
 export async function requireUser() {
@@ -12,7 +13,8 @@ export async function requireUser() {
 export async function requirePermission(permission: Permission) {
   const user = await requireUser();
   if (!hasPermission(user.role, permission)) {
-    redirect("/dashboard");
+    logger.security("access.denied", { userId: user.id, role: user.role, permission });
+    redirect("/forbidden");
   }
   return user;
 }

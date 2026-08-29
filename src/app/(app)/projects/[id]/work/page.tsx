@@ -6,36 +6,42 @@ import { connectDB } from "@/lib/db";
 import { WorkItem } from "@/models/work-item";
 import { PageHeader, ProjectNav } from "@/components/app-shell";
 import { Badge } from "@/components/ui/badge";
-import { buttonVariants } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
+import { Button, buttonVariants } from "@/components/ui/button";
+import { EmptyState } from "@/components/ui/empty-state";
+import { Table, THead, Th, Td } from "@/components/ui/table";
+import { restoreWorkItemAction } from "@/lib/actions/work-items";
 import { WORK_TYPES } from "@/lib/constants";
 import { fmtDate } from "@/lib/dates";
+import { verbs } from "@/lib/copy";
+import { cn } from "@/lib/utils";
 
 export default async function WorkListPage({
   params,
   searchParams,
 }: {
   params: Promise<{ id: string }>;
-  searchParams: Promise<{ type?: string }>;
+  searchParams: Promise<{ type?: string; view?: string }>;
 }) {
   const { id } = await params;
-  const { type } = await searchParams;
+  const { type, view } = await searchParams;
   const user = await requireUser();
   await connectDB();
   const project = await assertProjectAccess(user, id).catch(() => null);
   if (!project) notFound();
+  const archived = view === "archived";
   const items = await WorkItem.find({
     projectId: id,
-    deletedAt: null,
+    deletedAt: archived ? { $ne: null } : null,
     ...(type ? { type } : {}),
   }).sort({ dueDate: 1 });
   return (
     <>
       <PageHeader
         title="Work & deliverables"
+        description="Create and track governed work. Archive instead of deleting so history remains auditable."
         actions={
           <Link href={`/projects/${id}/work/new`} className={cn(buttonVariants())}>
-            New work item
+            {verbs.create} work item
           </Link>
         }
       />
@@ -43,7 +49,7 @@ export default async function WorkListPage({
       <div className="mb-4 flex flex-wrap gap-1">
         <Link
           href={`/projects/${id}/work`}
-          className={cn(buttonVariants({ variant: type ? "outline" : "default", size: "sm" }))}
+          className={cn(buttonVariants({ variant: !archived && !type ? "default" : "outline", size: "sm" }))}
         >
           All
         </Link>
@@ -56,54 +62,77 @@ export default async function WorkListPage({
             {t}
           </Link>
         ))}
+        <Link
+          href={`/projects/${id}/work?view=archived`}
+          className={cn(buttonVariants({ variant: archived ? "default" : "outline", size: "sm" }))}
+        >
+          Archived
+        </Link>
       </div>
-      <div className="overflow-hidden rounded-xl border bg-card">
-        <table className="w-full text-sm">
-          <thead className="bg-muted/50 text-left text-muted-foreground">
+      {!items.length ? (
+        <EmptyState
+          title={archived ? "No archived work" : type ? `No ${type} items` : "No work items yet"}
+          description={
+            archived
+              ? "Archived items can be restored to the active board."
+              : "Create a work item so schedule, health, and reviews have something to measure."
+          }
+          actionHref={archived ? undefined : `/projects/${id}/work/new`}
+          actionLabel={archived ? undefined : `${verbs.create} work item`}
+        />
+      ) : (
+        <Table>
+          <THead>
             <tr>
-              <th className="px-4 py-3">Key</th>
-              <th>Type</th>
-              <th>Title</th>
-              <th>Status</th>
-              <th>Due</th>
-              <th>Progress</th>
-              <th>Flags</th>
+              <Th>Key</Th>
+              <Th>Type</Th>
+              <Th>Title</Th>
+              <Th>Status</Th>
+              <Th>Due</Th>
+              <Th>Progress</Th>
+              <Th>Flags</Th>
+              {archived ? <Th /> : null}
             </tr>
-          </thead>
+          </THead>
           <tbody>
-            {items.map((i) => (
-              <tr key={String(i._id)} className="border-t">
-                <td className="px-4 py-3">
-                  <Link className="font-medium hover:underline" href={`/projects/${id}/work/${i._id}`}>
-                    {i.key}
-                  </Link>
-                </td>
-                <td>{i.type}</td>
-                <td>{i.title}</td>
-                <td>
-                  <Badge tone="slate">{i.status}</Badge>
-                </td>
-                <td>{fmtDate(i.dueDate)}</td>
-                <td>{i.progress}%</td>
-                <td className="space-x-1">
-                  {i.flags.overdue ? <Badge tone="red">overdue</Badge> : null}
-                  {i.flags.blocked ? <Badge tone="amber">blocked</Badge> : null}
-                  {i.flags.unassigned ? <Badge>unassigned</Badge> : null}
-                  {i.flags.missingData ? <Badge tone="amber">data</Badge> : null}
-                  {i.flags.stale ? <Badge>stale</Badge> : null}
-                </td>
-              </tr>
-            ))}
-            {!items.length ? (
-              <tr>
-                <td className="px-4 py-6 text-muted-foreground" colSpan={7}>
-                  No work items{type ? ` of type ${type}` : ""}.
-                </td>
-              </tr>
-            ) : null}
+            {items.map((i) => {
+              const restore = restoreWorkItemAction.bind(null, String(i._id));
+              return (
+                <tr key={String(i._id)} className="border-t">
+                  <Td className="font-medium">
+                    <Link className="hover:underline" href={`/projects/${id}/work/${i._id}`}>
+                      {i.key}
+                    </Link>
+                  </Td>
+                  <Td>{i.type}</Td>
+                  <Td>{i.title}</Td>
+                  <Td>
+                    <Badge tone="slate">{i.status}</Badge>
+                  </Td>
+                  <Td>{fmtDate(i.dueDate)}</Td>
+                  <Td>{i.progress}%</Td>
+                  <Td className="space-x-1">
+                    {i.flags.overdue ? <Badge tone="red">overdue</Badge> : null}
+                    {i.flags.blocked ? <Badge tone="amber">blocked</Badge> : null}
+                    {i.flags.unassigned ? <Badge>unassigned</Badge> : null}
+                    {i.flags.missingData ? <Badge tone="amber">data</Badge> : null}
+                    {i.flags.stale ? <Badge>stale</Badge> : null}
+                  </Td>
+                  {archived ? (
+                    <Td>
+                      <form action={restore}>
+                        <Button type="submit" size="sm" variant="outline">
+                          {verbs.restore}
+                        </Button>
+                      </form>
+                    </Td>
+                  ) : null}
+                </tr>
+              );
+            })}
           </tbody>
-        </table>
-      </div>
+        </Table>
+      )}
     </>
   );
 }

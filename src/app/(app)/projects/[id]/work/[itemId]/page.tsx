@@ -10,6 +10,7 @@ import {
   addCommentAction,
   addLinkAction,
   archiveWorkItemAction,
+  restoreWorkItemAction,
   attachEvidenceAction,
   transitionWorkItemFormAction,
   updateWorkItemFormAction,
@@ -24,6 +25,7 @@ import { Field, Input, Select, Textarea } from "@/components/ui/fields";
 import { LINK_TYPES, PRIORITIES } from "@/lib/constants";
 import { fmtDate, fmtDateInput } from "@/lib/dates";
 import { ActionForm, SubmitButton } from "@/components/action-form";
+import { ConfirmForm } from "@/components/confirm-form";
 import { UploadEvidenceForm } from "@/components/phase1-forms";
 
 export default async function WorkItemPage({
@@ -59,11 +61,21 @@ export default async function WorkItemPage({
         title={`${item.key} · ${item.title}`}
         description={item.type}
         actions={
-          <form action={archive}>
-            <Button type="submit" variant="destructive" size="sm">
-              Archive
-            </Button>
-          </form>
+          item.deletedAt ? (
+            <form action={restoreWorkItemAction.bind(null, itemId)}>
+              <Button type="submit" variant="outline" size="sm">
+                Restore
+              </Button>
+            </form>
+          ) : (
+            <ConfirmForm
+              action={archive}
+              title="Archive this work item?"
+              description="It leaves active boards and reports. You can restore it from the Archived filter on the work list."
+              confirmLabel="Archive"
+              triggerLabel="Archive"
+            />
+          )
         }
       />
       <ProjectNav id={id} />

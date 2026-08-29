@@ -22,7 +22,7 @@ export default async function NewWorkPage({ params }: { params: Promise<{ id: st
   const action = createWorkItemFormAction.bind(null, id);
   return (
     <>
-      <PageHeader title="New work item" />
+      <PageHeader title="Create work item" description="Add a governed item to this project. Status starts from the type-specific workflow." />
       <ProjectNav id={id} />
       <Card>
         <CardContent>
@@ -108,7 +108,7 @@ export default async function NewWorkPage({ params }: { params: Promise<{ id: st
               <input type="checkbox" name="committed" /> Committed work
             </label>
             <div className="md:col-span-2">
-              <SubmitButton>Create</SubmitButton>
+              <SubmitButton pendingLabel="Creating…">Create work item</SubmitButton>
             </div>
           </ActionForm>
         </CardContent>

@@ -2,6 +2,8 @@
 
 Standalone Next.js + MongoDB project-governance platform: work tracking, RAG health, deliverable assessments, KRA/KPI scorecards, and executive reporting. Jira sync is optional and deferred.
 
+Design and operations notes: [docs/DESIGN.md](docs/DESIGN.md), [docs/OPERATIONS.md](docs/OPERATIONS.md).
+
 ## Local setup
 
 1. Copy `.env.example` to `.env.local` and set `MONGODB_URI` and `AUTH_SECRET`.
@@ -18,6 +20,7 @@ npm run dev
 
 | Email | Role |
 |---|---|
+| `developer@tracker.local` | System administrator (developer access) |
 | `pm@tracker.local` | Project manager |
 | `pmo@tracker.local` | PMO administrator |
 | `exec@tracker.local` | Executive |
@@ -48,6 +51,8 @@ npm run dev
 4. Run seed once against Atlas (`MONGODB_URI=... npm run seed`) before inviting real users.
 
 Performance CSV/PDF routes require a signed-in session. Do not expose them as public URLs.
+
+Health: `GET /api/health/live` (process) and `GET /api/health/ready` (MongoDB). CI runs lint, `tsc`, and unit tests on each pull request. Accounts live under **Account** in the sidebar (password change and deactivation).
 
 ## Role matrix (summary)
 

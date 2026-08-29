@@ -6,6 +6,7 @@ import { WorkItem } from "@/models/work-item";
 import { PageHeader } from "@/components/app-shell";
 import { Badge } from "@/components/ui/badge";
 import { hasPermission } from "@/lib/rbac";
+import { EmptyState } from "@/components/ui/empty-state";
 
 export default async function ReviewsPage() {
   const user = await requireUser();
@@ -26,6 +27,12 @@ export default async function ReviewsPage() {
       {!hasPermission(user.role, "assessDeliverable") ? (
         <p className="mb-4 text-sm text-muted-foreground">You can view the queue; only reviewers and leads can submit scores.</p>
       ) : null}
+      {!items.length ? (
+        <EmptyState
+          title="No deliverables in review"
+          description="When a deliverable is marked Ready for Review, it appears here for scoring and acceptance."
+        />
+      ) : (
       <div className="overflow-hidden rounded-xl border bg-card">
         <table className="w-full text-sm">
           <thead className="bg-muted/50 text-left">
@@ -55,16 +62,10 @@ export default async function ReviewsPage() {
                 </td>
               </tr>
             ))}
-            {!items.length ? (
-              <tr>
-                <td className="px-4 py-6 text-muted-foreground" colSpan={4}>
-                  No deliverables waiting for review.
-                </td>
-              </tr>
-            ) : null}
           </tbody>
         </table>
       </div>
+      )}
     </>
   );
 }

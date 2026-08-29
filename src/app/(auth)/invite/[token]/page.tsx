@@ -14,8 +14,8 @@ export default async function InvitePage({ params }: { params: Promise<{ token: 
         </CardHeader>
         <CardContent>
           <form action={action} className="grid gap-4">
-            <Field label="New password">
-              <Input name="password" type="password" minLength={8} required />
+            <Field label="New password" hint="At least 10 characters, with upper, lower, and a number.">
+              <Input name="password" type="password" minLength={10} required autoComplete="new-password" />
             </Field>
             <Button type="submit">Activate account</Button>
           </form>

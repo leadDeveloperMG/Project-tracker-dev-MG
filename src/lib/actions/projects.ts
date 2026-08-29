@@ -18,6 +18,7 @@ import { assertCanManageProject, assertProjectAccess } from "@/lib/access";
 import type { HealthDimension, Rag } from "@/lib/constants";
 import { HEALTH_DIMENSIONS } from "@/lib/constants";
 import { oids, runAction, type ActionState } from "@/lib/safe-action";
+import { AppError } from "@/lib/errors";
 
 function oid(value: FormDataEntryValue | null) {
   const s = String(value ?? "");
@@ -26,13 +27,25 @@ function oid(value: FormDataEntryValue | null) {
 
 export async function createProjectAction(formData: FormData) {
   const user = await requireUser();
-  if (!hasPermission(user.role, "createProject")) throw new Error("Not allowed");
+  if (!hasPermission(user.role, "createProject")) {
+    throw new AppError("You do not have permission to create projects.", { status: 403 });
+  }
   await connectDB();
   const templateId = oid(formData.get("templateId"));
   const template = templateId ? await ProjectTemplate.findById(templateId) : null;
   const code = String(formData.get("code") ?? "").trim().toUpperCase();
   const name = String(formData.get("name") ?? "").trim();
-  if (!name || !code) throw new Error("Name and code are required");
+  const fieldErrors: Record<string, string> = {};
+  if (!name) fieldErrors.name = "Enter a project name.";
+  if (!code) fieldErrors.code = "Enter a short unique code, such as CPR.";
+  if (!formData.get("businessUnit")) fieldErrors.businessUnit = "Enter a business unit.";
+  if (!formData.get("sponsorId")) fieldErrors.sponsorId = "Select a sponsor.";
+  if (!formData.get("startDate") || !formData.get("targetEndDate")) {
+    fieldErrors.startDate = "Set start and target end dates.";
+  }
+  if (Object.keys(fieldErrors).length) {
+    throw new AppError("Fix the highlighted fields to create this project.", { fieldErrors });
+  }
   const startDate = formData.get("startDate") ? new Date(String(formData.get("startDate"))) : null;
   const targetEndDate = formData.get("targetEndDate") ? new Date(String(formData.get("targetEndDate"))) : null;
   const project = await Project.create({
@@ -86,6 +99,15 @@ export async function createProjectAction(formData: FormData) {
   });
   revalidatePath("/projects");
   redirect(`/projects/${project._id}`);
+}
+
+export async function createProjectFormAction(
+  _prev: ActionState | undefined,
+  formData: FormData,
+): Promise<ActionState> {
+  return runAction(async () => {
+    await createProjectAction(formData);
+  });
 }
 
 export async function updateProjectAction(projectId: string, formData: FormData) {

@@ -19,7 +19,7 @@ export default async function AdminPage() {
       <PageHeader title="Admin" description="PMO governance: templates, catalog, users, retention." />
       <div className="grid gap-3 md:grid-cols-2">
         {links.map((l) => (
-          <Link key={l.href} href={l.href} className="rounded-xl border bg-white p-5 hover:bg-muted/40">
+          <Link key={l.href} href={l.href} className="rounded-xl border bg-card p-5 hover:bg-muted/40">
             {l.label}
           </Link>
         ))}

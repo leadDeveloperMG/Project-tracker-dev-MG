@@ -8,6 +8,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge, RagBadge } from "@/components/ui/badge";
 import { fmtDate } from "@/lib/dates";
 import { PROJECT_STATUSES } from "@/lib/constants";
+import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 export default async function PortfolioPage({
   searchParams,
@@ -75,8 +77,8 @@ export default async function PortfolioPage({
             <option key={u}>{u}</option>
           ))}
         </select>
-        <button type="submit" className="h-9 rounded-lg border px-3">
-          Filter
+        <button type="submit" className={cn(buttonVariants({ variant: "outline" }))}>
+          Apply filters
         </button>
       </form>
       <div className="mb-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">

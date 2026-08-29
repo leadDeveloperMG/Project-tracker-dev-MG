@@ -68,7 +68,7 @@ export function postLoginPath(role: string | undefined) {
 }
 
 export const NAV_ITEMS = [
-  { href: "/dashboard", label: "My dashboard", permission: null },
+  { href: "/dashboard", label: "Dashboard", permission: null },
   { href: "/portfolio", label: "Portfolio", permission: "viewPortfolio" as Permission },
   { href: "/projects", label: "Projects", permission: null },
   { href: "/team", label: "Team", permission: "assessDeliverable" as Permission },

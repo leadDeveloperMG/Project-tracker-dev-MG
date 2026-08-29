@@ -13,6 +13,10 @@ import { buttonVariants } from "@/components/ui/button";
 import { fmtDate } from "@/lib/dates";
 import { cn } from "@/lib/utils";
 import { ROLE_LABELS, type Role } from "@/lib/constants";
+import { OnboardingBanner } from "@/components/onboarding-banner";
+import { EmptyState } from "@/components/ui/empty-state";
+import { hasPermission } from "@/lib/rbac";
+import { verbs } from "@/lib/copy";
 
 export default async function PmDashboardPage() {
   const user = await requireUser();
@@ -69,15 +73,15 @@ export default async function PmDashboardPage() {
     subjectType: "member",
     subjectId: user.id,
   }).sort({ periodEnd: -1 });
-  const title =
-    user.role === "team_member"
-      ? "My dashboard"
-      : user.role === "team_lead"
-        ? "Team-lead dashboard"
-        : "PM dashboard";
+  const title = "Dashboard";
 
   return (
     <>
+      <OnboardingBanner
+        canCreateProject={hasPermission(user.role, "createProject")}
+        canInvite={hasPermission(user.role, "manageUsers")}
+        hasProjects={projects.length > 0}
+      />
       <PageHeader
         title={title}
         description={`${ROLE_LABELS[user.role as Role] ?? user.role}: assigned work, reviews, exceptions, and health for projects you can access.`}
@@ -85,11 +89,11 @@ export default async function PmDashboardPage() {
           <div className="flex gap-2">
             {myScorecard ? (
               <Link href={`/scorecards/${myScorecard._id}`} className={cn(buttonVariants({ variant: "outline" }))}>
-                My scorecard
+                Open scorecard
               </Link>
             ) : null}
-            <Link href="/projects" className={cn(buttonVariants({ variant: "outline" }))}>
-              All projects
+            <Link href="/projects" className={cn(buttonVariants())}>
+              Open projects
             </Link>
           </div>
         }
@@ -130,7 +134,7 @@ export default async function PmDashboardPage() {
               <Link
                 key={String(p._id)}
                 href={`/projects/${p._id}`}
-                className="flex items-center justify-between rounded-lg border px-3 py-2 text-sm hover:bg-muted"
+                className="flex min-h-11 items-center justify-between rounded-lg border px-3 py-2 text-sm hover:bg-muted"
               >
                 <span>
                   <span className="font-medium">{p.code}</span> {p.name}
@@ -141,7 +145,16 @@ export default async function PmDashboardPage() {
                 </span>
               </Link>
             ))}
-            {!projects.length ? <p className="text-sm text-muted-foreground">No projects assigned.</p> : null}
+            {!projects.length ? (
+              <EmptyState
+                className="border-0 py-8 shadow-none"
+                icon="create"
+                title="No projects assigned"
+                description="Create a project or ask to be added to a team so this dashboard has work to show."
+                actionHref={hasPermission(user.role, "createProject") ? "/projects/new" : undefined}
+                actionLabel={hasPermission(user.role, "createProject") ? `${verbs.create} project` : undefined}
+              />
+            ) : null}
           </CardContent>
         </Card>
         <Card>

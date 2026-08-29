@@ -9,7 +9,7 @@ import { connectDB } from "@/lib/db";
 import { Project } from "@/models/project";
 import { WorkItem } from "@/models/work-item";
 import { writeAudit } from "@/models/audit";
-import { allowedTransitions, canTransition, initialStatus } from "@/lib/engines/workflow";
+import { canTransition, initialStatus } from "@/lib/engines/workflow";
 import { calculateProgress, computeFlags } from "@/lib/engines/progress";
 import { assertProjectAccess } from "@/lib/access";
 import { notify } from "@/lib/services/notify";
@@ -306,6 +306,25 @@ export async function archiveWorkItemAction(itemId: string) {
   });
   revalidatePath(`/projects/${item.projectId}/work`);
   redirect(`/projects/${item.projectId}/work`);
+}
+
+export async function restoreWorkItemAction(itemId: string) {
+  const user = await requireUser();
+  await connectDB();
+  const item = await WorkItem.findById(itemId);
+  if (!item) throw new Error("Work item not found");
+  await assertProjectAccess(user, String(item.projectId));
+  item.deletedAt = null;
+  await item.save();
+  await rollupParent(item.parentId);
+  await writeAudit({
+    actorId: user.id,
+    action: "work.restore",
+    entityType: "WorkItem",
+    entityId: itemId,
+  });
+  revalidatePath(`/projects/${item.projectId}/work`);
+  redirect(`/projects/${item.projectId}/work/${itemId}`);
 }
 
 export async function uploadEvidenceFileAction(

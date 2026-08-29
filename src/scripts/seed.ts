@@ -68,6 +68,7 @@ async function main() {
   const users: Record<string, InstanceType<typeof User>> = {};
   const specs: { key: string; name: string; email: string; role: Role }[] = [
     { key: "admin", name: "Ava Admin", email: "admin@tracker.local", role: "system_admin" },
+    { key: "dev", name: "Dana Developer", email: "developer@tracker.local", role: "system_admin" },
     { key: "pmo", name: "Priya PMO", email: "pmo@tracker.local", role: "pmo_admin" },
     { key: "exec", name: "Elena Exec", email: "exec@tracker.local", role: "executive" },
     { key: "hr", name: "Hugo HR", email: "hr@tracker.local", role: "hr_reviewer" },
@@ -610,7 +611,7 @@ async function main() {
 
   console.log("Seed complete.");
   console.log("Password for all demo users: Password123!");
-  console.log("Try pm@tracker.local, exec@tracker.local, admin@tracker.local");
+  console.log("Try developer@tracker.local, pm@tracker.local, exec@tracker.local, admin@tracker.local");
   process.exit(0);
 }
 

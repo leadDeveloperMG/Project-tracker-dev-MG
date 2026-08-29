@@ -23,6 +23,11 @@ export async function createUserAction(formData: FormData) {
   if (!ROLES.includes(role)) throw new Error("Invalid role");
   const inviteToken = crypto.randomBytes(24).toString("hex");
   const password = String(formData.get("password") ?? "");
+  if (password) {
+    const { validatePassword } = await import("@/lib/password");
+    const invalid = validatePassword(password);
+    if (invalid) throw new Error(invalid);
+  }
   const user = await User.create({
     name,
     email,

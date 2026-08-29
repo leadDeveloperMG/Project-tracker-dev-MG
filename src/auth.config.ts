@@ -3,7 +3,8 @@ import type { Role } from "@/lib/constants";
 
 export const authConfig = {
   trustHost: true,
-  session: { strategy: "jwt" },
+  session: { strategy: "jwt", maxAge: 60 * 60 * 8 },
+  useSecureCookies: process.env.NODE_ENV === "production",
   pages: { signIn: "/login" },
   providers: [],
   callbacks: {
@@ -13,7 +14,8 @@ export const authConfig = {
         pathname.startsWith("/login") ||
         pathname.startsWith("/invite") ||
         pathname.startsWith("/api/auth") ||
-        pathname.startsWith("/api/cron")
+        pathname.startsWith("/api/cron") ||
+        pathname.startsWith("/api/health")
       ) {
         return true;
       }
