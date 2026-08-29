@@ -1,0 +1,440 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R 5 0 R 7 0 R 9 0 R 11 0 R 13 0 R] /Count 6 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 4 0 R /Resources << /Font << /F1 15 0 R >> >> >>
+endobj
+4 0 obj
+<< /Length 4237 >>
+stream
+BT /F1 18 Tf 48 736 Td (Project Tracker User Manual) Tj ET
+BT /F1 10 Tf 48 718 Td ( ) Tj ET
+BT /F1 10 Tf 48 712 Td (Version 1.0 · August 2026) Tj ET
+BT /F1 10 Tf 48 700 Td (Audience: every signed-in role. This guide is organised by user, capability, and workflow.) Tj ET
+BT /F1 10 Tf 48 688 Td ( ) Tj ET
+BT /F1 10 Tf 48 682 Td (                                                                      ) Tj ET
+BT /F1 10 Tf 48 674 Td ( ) Tj ET
+BT /F1 14 Tf 48 668 Td (1. Getting started \(all users\)) Tj ET
+BT /F1 10 Tf 48 652 Td ( ) Tj ET
+BT /F1 12 Tf 48 646 Td (Sign in) Tj ET
+BT /F1 10 Tf 48 634 Td ( ) Tj ET
+BT /F1 10 Tf 48 628 Td (1. Open the application URL \(locally http://localhost:3000, or your Vercel domain in) Tj ET
+BT /F1 10 Tf 48 616 Td (   production\).) Tj ET
+BT /F1 10 Tf 48 604 Td (2. Enter your email and password.) Tj ET
+BT /F1 10 Tf 48 592 Td (3. Choose Sign in. Too many failed attempts lock sign-in for 15 minutes.) Tj ET
+BT /F1 10 Tf 48 580 Td ( ) Tj ET
+BT /F1 10 Tf 48 574 Td (After sign-in you land on Dashboard \(project managers, team leads, team members\) or) Tj ET
+BT /F1 10 Tf 48 562 Td (Portfolio \(PMO, executives, HR, functional managers, system administrators\).) Tj ET
+BT /F1 10 Tf 48 550 Td ( ) Tj ET
+BT /F1 10 Tf 48 544 Td (Demo accounts \(seeded environments only\) all use password Password123!:) Tj ET
+BT /F1 10 Tf 48 532 Td ( ) Tj ET
+BT /F1 9 Tf 48 526 Td (Email · Role) Tj ET
+BT /F1 9 Tf 48 515 Td (developer@tracker.local · System administrator) Tj ET
+BT /F1 9 Tf 48 504 Td (admin@tracker.local · System administrator) Tj ET
+BT /F1 9 Tf 48 493 Td (pmo@tracker.local · PMO administrator) Tj ET
+BT /F1 9 Tf 48 482 Td (exec@tracker.local · Executive) Tj ET
+BT /F1 9 Tf 48 471 Td (pm@tracker.local · Project manager) Tj ET
+BT /F1 9 Tf 48 460 Td (lead@tracker.local · Team lead) Tj ET
+BT /F1 9 Tf 48 449 Td (member@tracker.local · Team member) Tj ET
+BT /F1 9 Tf 48 438 Td (fm@tracker.local · Functional manager) Tj ET
+BT /F1 9 Tf 48 427 Td (hr@tracker.local · HR reviewer) Tj ET
+BT /F1 10 Tf 48 416 Td ( ) Tj ET
+BT /F1 12 Tf 48 410 Td (Account) Tj ET
+BT /F1 10 Tf 48 398 Td ( ) Tj ET
+BT /F1 10 Tf 48 392 Td (Open Account at the bottom of the sidebar.) Tj ET
+BT /F1 10 Tf 48 380 Td ( ) Tj ET
+BT /F1 10 Tf 48 374 Td (• Change password: current password plus a new password \(at least 10 characters, upper,) Tj ET
+BT /F1 10 Tf 48 362 Td (  lower, and a number\).) Tj ET
+BT /F1 10 Tf 48 350 Td (• Deactivate account: type your email to confirm. You are signed out immediately. An) Tj ET
+BT /F1 10 Tf 48 338 Td (  administrator must reactivate you.) Tj ET
+BT /F1 10 Tf 48 326 Td ( ) Tj ET
+BT /F1 12 Tf 48 320 Td (Common screen rules) Tj ET
+BT /F1 10 Tf 48 308 Td ( ) Tj ET
+BT /F1 10 Tf 48 302 Td (• Empty lists explain what belongs there and offer one primary action \(for example Create) Tj ET
+BT /F1 10 Tf 48 290 Td (  project\).) Tj ET
+BT /F1 10 Tf 48 278 Td (• Destructive actions such as Archive ask for confirmation. Archived work can be Restored) Tj ET
+BT /F1 10 Tf 48 266 Td (  from the work list Archived filter.) Tj ET
+BT /F1 10 Tf 48 254 Td (• If you lack access you see You do not have access, not a blank page.) Tj ET
+BT /F1 10 Tf 48 242 Td (• Use Skip to content after the page loads if you navigate by keyboard.) Tj ET
+BT /F1 10 Tf 48 230 Td ( ) Tj ET
+BT /F1 12 Tf 48 224 Td (Language used in the product) Tj ET
+BT /F1 10 Tf 48 212 Td ( ) Tj ET
+BT /F1 9 Tf 48 206 Td (Action · Button / label) Tj ET
+BT /F1 9 Tf 48 195 Td (New record · Create) Tj ET
+BT /F1 9 Tf 48 184 Td (Persist edits · Save) Tj ET
+BT /F1 9 Tf 48 173 Td (Soft-delete · Archive) Tj ET
+BT /F1 9 Tf 48 162 Td (Undo archive · Restore) Tj ET
+BT /F1 9 Tf 48 151 Td (Session · Sign in / Sign out) Tj ET
+BT /F1 9 Tf 48 140 Td (Narrow a list · Apply filters) Tj ET
+BT /F1 10 Tf 48 129 Td ( ) Tj ET
+BT /F1 10 Tf 48 123 Td (                                                                      ) Tj ET
+BT /F1 10 Tf 48 115 Td ( ) Tj ET
+BT /F1 14 Tf 48 109 Td (2. Capability matrix) Tj ET
+BT /F1 10 Tf 48 93 Td ( ) Tj ET
+BT /F1 10 Tf 48 87 Td (What each role can do. A blank cell means that role cannot perform the capability \(the) Tj ET
+BT /F1 8 Tf 48 36 Td (Project Tracker User Manual  ·  1 / 6) Tj ET
+endstream
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 6 0 R /Resources << /Font << /F1 15 0 R >> >> >>
+endobj
+6 0 obj
+<< /Length 5328 >>
+stream
+BT /F1 10 Tf 48 736 Td (navigation item may also be hidden\).) Tj ET
+BT /F1 10 Tf 48 724 Td ( ) Tj ET
+BT /F1 9 Tf 48 718 Td (Capability · System admin · PMO · Executive · Project manager · Team lead · Team member ·) Tj ET
+BT /F1 9 Tf 48 707 Td (Functional manager · HR reviewer) Tj ET
+BT /F1 9 Tf 48 696 Td (Dashboard · Yes · Yes · Yes · Yes · Yes · Yes · Yes · Yes) Tj ET
+BT /F1 9 Tf 48 685 Td (Portfolio and executive reports · Yes · Yes · Yes · Yes · — · — · Yes · Yes) Tj ET
+BT /F1 9 Tf 48 674 Td (All projects \(unrestricted\) · Yes · Yes · Yes · Assigned only · Assigned only · Assigned) Tj ET
+BT /F1 9 Tf 48 663 Td (only · Assigned only · Assigned only) Tj ET
+BT /F1 9 Tf 48 652 Td (Create / manage projects · Yes · Yes · — · Yes · — · — · — · —) Tj ET
+BT /F1 9 Tf 48 641 Td (Assess / accept deliverables · Yes · Yes · — · Yes · Yes · — · — · —) Tj ET
+BT /F1 9 Tf 48 630 Td (Team dashboard and review queue · Yes · Yes · — · Yes · Yes · — · — · —) Tj ET
+BT /F1 9 Tf 48 619 Td (Own scorecard, check-ins, annual review \(view\) · Yes · Yes · Yes · Yes · Yes · Yes · Yes ·) Tj ET
+BT /F1 9 Tf 48 608 Td (Yes) Tj ET
+BT /F1 9 Tf 48 597 Td (Lock scorecards / record check-ins · Yes · Yes · — · Yes · Yes · — · Yes · —) Tj ET
+BT /F1 9 Tf 48 586 Td (Override KPI results · Yes · Yes · — · Yes · — · — · Yes · —) Tj ET
+BT /F1 9 Tf 48 575 Td (Calibrate ratings · Yes · Yes · — · — · — · — · — · Yes) Tj ET
+BT /F1 9 Tf 48 564 Td (Correct a locked scorecard · Yes · Yes · — · — · — · — · — · Yes) Tj ET
+BT /F1 9 Tf 48 553 Td (Manage users, templates, retention · Yes · Yes · — · — · — · — · — · —) Tj ET
+BT /F1 9 Tf 48 542 Td (KRA/KPI catalog · Yes · Yes · — · — · — · — · — · Yes) Tj ET
+BT /F1 9 Tf 48 531 Td (Data-quality report · Yes · Yes · Yes · Yes · — · — · — · —) Tj ET
+BT /F1 9 Tf 48 520 Td (Jira adapter stub · Yes · — · — · — · — · — · — · —) Tj ET
+BT /F1 10 Tf 48 509 Td ( ) Tj ET
+BT /F1 10 Tf 48 503 Td (Scorecard privacy: you can always open your own scorecard. Your manager, HR, functional) Tj ET
+BT /F1 10 Tf 48 491 Td (managers, PMO, and system administrators can open individual scorecards they are entitled to) Tj ET
+BT /F1 10 Tf 48 479 Td (see. Executives do not open another person’s individual scorecard unless they are that) Tj ET
+BT /F1 10 Tf 48 467 Td (person’s manager.) Tj ET
+BT /F1 10 Tf 48 455 Td ( ) Tj ET
+BT /F1 10 Tf 48 449 Td (                                                                      ) Tj ET
+BT /F1 10 Tf 48 441 Td ( ) Tj ET
+BT /F1 14 Tf 48 435 Td (3. Shared workflows) Tj ET
+BT /F1 10 Tf 48 419 Td ( ) Tj ET
+BT /F1 10 Tf 48 413 Td (These journeys appear for more than one role. Follow the steps for your role; skip steps you) Tj ET
+BT /F1 10 Tf 48 401 Td (cannot see.) Tj ET
+BT /F1 10 Tf 48 389 Td ( ) Tj ET
+BT /F1 12 Tf 48 383 Td (3.1 Join the platform \(invite\)) Tj ET
+BT /F1 10 Tf 48 371 Td ( ) Tj ET
+BT /F1 10 Tf 48 365 Td (1. Administrator or PMO creates you under Admin → Users & teams \(or you receive a) Tj ET
+BT /F1 10 Tf 48 353 Td (   temporary password\).) Tj ET
+BT /F1 10 Tf 48 341 Td (2. If an invite link is issued, open /invite/{token} and set a password that meets the) Tj ET
+BT /F1 10 Tf 48 329 Td (   rules.) Tj ET
+BT /F1 10 Tf 48 317 Td (3. Sign in. Complete Account password change if you were given a temporary password.) Tj ET
+BT /F1 10 Tf 48 305 Td ( ) Tj ET
+BT /F1 12 Tf 48 299 Td (3.2 Create a project \(admin, PMO, project manager\)) Tj ET
+BT /F1 10 Tf 48 287 Td ( ) Tj ET
+BT /F1 10 Tf 48 281 Td (1. Open Projects → Create project.) Tj ET
+BT /F1 10 Tf 48 269 Td (2. Choose an approved template when one exists \(milestones are created from it\).) Tj ET
+BT /F1 10 Tf 48 257 Td (3. Enter name, unique code, business unit, strategic objective, sponsor, manager, dates,) Tj ET
+BT /F1 10 Tf 48 245 Td (   and charter/scope.) Tj ET
+BT /F1 10 Tf 48 233 Td (4. Choose Create project. Status starts as Proposed.) Tj ET
+BT /F1 10 Tf 48 221 Td (5. Open the project. Confirm goals with the team, assign members/stakeholders/approvers,) Tj ET
+BT /F1 10 Tf 48 209 Td (   and add at least one Milestone before moving status to In Progress.) Tj ET
+BT /F1 10 Tf 48 197 Td ( ) Tj ET
+BT /F1 12 Tf 48 191 Td (3.3 Create and progress work) Tj ET
+BT /F1 10 Tf 48 179 Td ( ) Tj ET
+BT /F1 10 Tf 48 173 Td (1. Open the project → Work → Create work item.) Tj ET
+BT /F1 10 Tf 48 161 Td (2. Choose type \(Epic, Milestone, Deliverable, Task, Risk, Issue, and others\). Status) Tj ET
+BT /F1 10 Tf 48 149 Td (   starts from that type’s workflow.) Tj ET
+BT /F1 10 Tf 48 137 Td (3. Assign an owner, due date, and acceptance criteria where required.) Tj ET
+BT /F1 10 Tf 48 125 Td (4. On the work item, use Save for field edits and the workflow buttons to move status) Tj ET
+BT /F1 10 Tf 48 113 Td (   \(with a comment when the engine requires it\).) Tj ET
+BT /F1 10 Tf 48 101 Td (5. Attach evidence \(file or URL\) before requesting review on deliverables.) Tj ET
+BT /F1 10 Tf 48 89 Td (6. Archive removes the item from active boards; Archived + Restore brings it back.) Tj ET
+BT /F1 8 Tf 48 36 Td (Project Tracker User Manual  ·  2 / 6) Tj ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 8 0 R /Resources << /Font << /F1 15 0 R >> >> >>
+endobj
+8 0 obj
+<< /Length 4896 >>
+stream
+BT /F1 10 Tf 48 736 Td ( ) Tj ET
+BT /F1 10 Tf 48 730 Td (Typical deliverable path: Draft → In Progress → Ready for Review → Accepted or Rework) Tj ET
+BT /F1 10 Tf 48 718 Td (Required → Closed.) Tj ET
+BT /F1 10 Tf 48 706 Td (Owners cannot accept their own deliverable unless an authorised exception is recorded.) Tj ET
+BT /F1 10 Tf 48 694 Td ( ) Tj ET
+BT /F1 12 Tf 48 688 Td (3.4 Assess a deliverable \(admin, PMO, project manager,) Tj ET
+BT /F1 12 Tf 48 676 Td (team lead\)) Tj ET
+BT /F1 10 Tf 48 673 Td ( ) Tj ET
+BT /F1 10 Tf 48 667 Td (1. Open Reviews or the work item when status is Ready for Review.) Tj ET
+BT /F1 10 Tf 48 655 Td (2. Score the quality dimensions and submit accept, rework, or reject.) Tj ET
+BT /F1 10 Tf 48 643 Td (3. Rework returns the item to the owner with comments; accept records the assessment in) Tj ET
+BT /F1 10 Tf 48 631 Td (   the audit trail.) Tj ET
+BT /F1 10 Tf 48 619 Td ( ) Tj ET
+BT /F1 12 Tf 48 613 Td (3.5 Project health and status reporting) Tj ET
+BT /F1 10 Tf 48 601 Td ( ) Tj ET
+BT /F1 10 Tf 48 595 Td (1. Open the project → Health. Calculated RAG \(scope, schedule, delivery, quality, risks,) Tj ET
+BT /F1 10 Tf 48 583 Td (   resources, stakeholders\) can be overridden by the project manager or PMO with a rationale.) Tj ET
+BT /F1 10 Tf 48 571 Td (2. Open Status reports and file the period update \(accomplishments, plans, blockers,) Tj ET
+BT /F1 10 Tf 48 559 Td (   decisions, risks\).) Tj ET
+BT /F1 10 Tf 48 547 Td (3. Risks holds risks, issues, and change requests with their own status paths.) Tj ET
+BT /F1 10 Tf 48 535 Td ( ) Tj ET
+BT /F1 12 Tf 48 529 Td (3.6 Performance cycle \(scorecards\)) Tj ET
+BT /F1 10 Tf 48 517 Td ( ) Tj ET
+BT /F1 10 Tf 48 511 Td (1. PMO/HR keep an approved KRA/KPI catalog whose weights total 100% per role.) Tj ET
+BT /F1 10 Tf 48 499 Td (2. A manager generates a member/team/project scorecard for a period.) Tj ET
+BT /F1 10 Tf 48 487 Td (3. Calculated KPIs refresh nightly \(and on demand\). Ticket counts are operational only;) Tj ET
+BT /F1 10 Tf 48 475 Td (   they are not the performance rating.) Tj ET
+BT /F1 10 Tf 48 463 Td (4. Lock the scorecard when the period is complete. Only admin, PMO, or HR can correct a) Tj ET
+BT /F1 10 Tf 48 451 Td (   locked card.) Tj ET
+BT /F1 10 Tf 48 439 Td (5. Monthly Check-ins capture progress and constraints. Calibration compares rating) Tj ET
+BT /F1 10 Tf 48 427 Td (   distributions. Annual reviews consolidate validated periods and never auto-finalise a) Tj ET
+BT /F1 10 Tf 48 415 Td (   rating.) Tj ET
+BT /F1 10 Tf 48 403 Td ( ) Tj ET
+BT /F1 12 Tf 48 397 Td (3.7 Export and notifications) Tj ET
+BT /F1 10 Tf 48 385 Td ( ) Tj ET
+BT /F1 10 Tf 48 379 Td (• Reports \(portfolio-capable roles\): filter and export CSV/PDF summaries. Those routes) Tj ET
+BT /F1 10 Tf 48 367 Td (  require a signed-in session.) Tj ET
+BT /F1 10 Tf 48 355 Td (• Notifications: overdue work, review queues, and data-quality alerts. Mark items read) Tj ET
+BT /F1 10 Tf 48 343 Td (  after you act.) Tj ET
+BT /F1 10 Tf 48 331 Td ( ) Tj ET
+BT /F1 10 Tf 48 325 Td (                                                                      ) Tj ET
+BT /F1 10 Tf 48 317 Td ( ) Tj ET
+BT /F1 14 Tf 48 311 Td (4. Users, capabilities, and workflows) Tj ET
+BT /F1 10 Tf 48 295 Td ( ) Tj ET
+BT /F1 10 Tf 48 289 Td (Each section lists what you can do, what you see in the sidebar, and how you work day to) Tj ET
+BT /F1 10 Tf 48 277 Td (day.) Tj ET
+BT /F1 10 Tf 48 265 Td ( ) Tj ET
+BT /F1 12 Tf 48 259 Td (4.1 Team member) Tj ET
+BT /F1 10 Tf 48 247 Td ( ) Tj ET
+BT /F1 10 Tf 48 241 Td (Capabilities: view assigned projects and work; update your items; view your scorecard,) Tj ET
+BT /F1 10 Tf 48 229 Td (check-ins, and annual review; change your password.) Tj ET
+BT /F1 10 Tf 48 217 Td ( ) Tj ET
+BT /F1 10 Tf 48 211 Td (Sidebar: Dashboard, Projects, Scorecards, Check-ins, Annual reviews, Notifications, Account.) Tj ET
+BT /F1 10 Tf 48 199 Td ( ) Tj ET
+BT /F1 10 Tf 48 193 Td (Workflows) Tj ET
+BT /F1 10 Tf 48 181 Td ( ) Tj ET
+BT /F1 10 Tf 48 175 Td (1. Sign in → Dashboard. Confirm open work, overdue items, and anything due in 14 days.) Tj ET
+BT /F1 10 Tf 48 163 Td (2. Open a work item → update progress, comments, and evidence → move status \(for example) Tj ET
+BT /F1 10 Tf 48 151 Td (   To Do → In Progress → In Review\).) Tj ET
+BT /F1 10 Tf 48 139 Td (3. When a deliverable is ready, set Ready for Review \(you cannot accept it yourself\).) Tj ET
+BT /F1 10 Tf 48 127 Td (4. Open Scorecards for your current period. Use Check-ins only to read records about you) Tj ET
+BT /F1 10 Tf 48 115 Td (   unless you also hold a locking role.) Tj ET
+BT /F1 10 Tf 48 103 Td (5. Use Notifications for reminders. Use Account for password or deactivation.) Tj ET
+BT /F1 10 Tf 48 91 Td ( ) Tj ET
+BT /F1 12 Tf 48 85 Td (4.2 Team lead) Tj ET
+BT /F1 8 Tf 48 36 Td (Project Tracker User Manual  ·  3 / 6) Tj ET
+endstream
+endobj
+9 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 10 0 R /Resources << /Font << /F1 15 0 R >> >> >>
+endobj
+10 0 obj
+<< /Length 4575 >>
+stream
+BT /F1 10 Tf 48 736 Td ( ) Tj ET
+BT /F1 10 Tf 48 730 Td (Capabilities: everything a member can do on assigned projects, plus assess/accept) Tj ET
+BT /F1 10 Tf 48 718 Td (deliverables, team dashboard, review queue, lock scorecards, and record check-ins.) Tj ET
+BT /F1 10 Tf 48 706 Td ( ) Tj ET
+BT /F1 10 Tf 48 700 Td (Sidebar: Dashboard, Projects, Team, Reviews, Scorecards, Check-ins, Annual reviews,) Tj ET
+BT /F1 10 Tf 48 688 Td (Notifications, Account.) Tj ET
+BT /F1 10 Tf 48 676 Td ( ) Tj ET
+BT /F1 10 Tf 48 670 Td (Workflows) Tj ET
+BT /F1 10 Tf 48 658 Td ( ) Tj ET
+BT /F1 10 Tf 48 652 Td (1. Dashboard and Team: pending reviews, workload, and rework.) Tj ET
+BT /F1 10 Tf 48 640 Td (2. Reviews: score deliverables; do not accept work you own.) Tj ET
+BT /F1 10 Tf 48 628 Td (3. Project Work: assign items, unblock, and keep dates current.) Tj ET
+BT /F1 10 Tf 48 616 Td (4. Scorecards / Check-ins: generate or lock team-period cards you are allowed to manage;) Tj ET
+BT /F1 10 Tf 48 604 Td (   record monthly check-ins for direct reports.) Tj ET
+BT /F1 10 Tf 48 592 Td (5. Escalate blocked dependencies and red RAG to the project manager.) Tj ET
+BT /F1 10 Tf 48 580 Td ( ) Tj ET
+BT /F1 12 Tf 48 574 Td (4.3 Project manager) Tj ET
+BT /F1 10 Tf 48 562 Td ( ) Tj ET
+BT /F1 10 Tf 48 556 Td (Capabilities: create and manage projects you own; full work and health control;) Tj ET
+BT /F1 10 Tf 48 544 Td (assess/accept; portfolio and reports; lock scorecards; override health and KPIs; data) Tj ET
+BT /F1 10 Tf 48 532 Td (quality.) Tj ET
+BT /F1 10 Tf 48 520 Td ( ) Tj ET
+BT /F1 10 Tf 48 514 Td (Sidebar: Dashboard, Portfolio, Projects, Team, Reviews, Scorecards, Check-ins, Annual) Tj ET
+BT /F1 10 Tf 48 502 Td (reviews, Reports, Notifications, Account.) Tj ET
+BT /F1 10 Tf 48 490 Td ( ) Tj ET
+BT /F1 10 Tf 48 484 Td (Workflows) Tj ET
+BT /F1 10 Tf 48 472 Td ( ) Tj ET
+BT /F1 10 Tf 48 466 Td (1. Create project from a template → complete charter → add milestones → move to In) Tj ET
+BT /F1 10 Tf 48 454 Td (   Progress when the gate passes.) Tj ET
+BT /F1 10 Tf 48 442 Td (2. Weekly: Dashboard exceptions → Work board → Health \(override only with rationale\) →) Tj ET
+BT /F1 10 Tf 48 430 Td (   Status report.) Tj ET
+BT /F1 10 Tf 48 418 Td (3. Reviews: keep the accept/rework cycle moving.) Tj ET
+BT /F1 10 Tf 48 406 Td (4. Portfolio and Reports: RAG mix, overdue milestones, high risks; export when leadership) Tj ET
+BT /F1 10 Tf 48 394 Td (   asks.) Tj ET
+BT /F1 10 Tf 48 382 Td (5. Scorecards: lock period results for the project team; never use story points as the) Tj ET
+BT /F1 10 Tf 48 370 Td (   rating.) Tj ET
+BT /F1 10 Tf 48 358 Td ( ) Tj ET
+BT /F1 12 Tf 48 352 Td (4.4 Functional manager) Tj ET
+BT /F1 10 Tf 48 340 Td ( ) Tj ET
+BT /F1 10 Tf 48 334 Td (Capabilities: portfolio view; assigned-project visibility; own and team scorecards \(where) Tj ET
+BT /F1 10 Tf 48 322 Td (entitled\); lock scorecards and check-ins; override KPIs; no project create and no) Tj ET
+BT /F1 10 Tf 48 310 Td (deliverable assessment.) Tj ET
+BT /F1 10 Tf 48 298 Td ( ) Tj ET
+BT /F1 10 Tf 48 292 Td (Sidebar: Dashboard, Portfolio, Projects, Scorecards, Check-ins, Annual reviews, Reports,) Tj ET
+BT /F1 10 Tf 48 280 Td (Notifications, Account.) Tj ET
+BT /F1 10 Tf 48 268 Td ( ) Tj ET
+BT /F1 10 Tf 48 262 Td (Workflows) Tj ET
+BT /F1 10 Tf 48 250 Td ( ) Tj ET
+BT /F1 10 Tf 48 244 Td (1. Portfolio / Reports: delivery and risk for units you care about.) Tj ET
+BT /F1 10 Tf 48 232 Td (2. Scorecards: review people in your function; lock or override KPI results when you are) Tj ET
+BT /F1 10 Tf 48 220 Td (   the authorised manager.) Tj ET
+BT /F1 10 Tf 48 208 Td (3. Check-ins: record monthly feedback for reports.) Tj ET
+BT /F1 10 Tf 48 196 Td (4. Route delivery disputes to the project manager; route rating disputes to HR/PMO.) Tj ET
+BT /F1 10 Tf 48 184 Td ( ) Tj ET
+BT /F1 12 Tf 48 178 Td (4.5 Executive) Tj ET
+BT /F1 10 Tf 48 166 Td ( ) Tj ET
+BT /F1 10 Tf 48 160 Td (Capabilities: portfolio and all projects; reports and data quality; view team scorecards) Tj ET
+BT /F1 10 Tf 48 148 Td (\(not other individuals’ cards unless you manage them\); no create-project, no assessment, no) Tj ET
+BT /F1 10 Tf 48 136 Td (catalog admin.) Tj ET
+BT /F1 10 Tf 48 124 Td ( ) Tj ET
+BT /F1 10 Tf 48 118 Td (Sidebar: Dashboard, Portfolio, Projects, Scorecards, Check-ins, Annual reviews, Reports,) Tj ET
+BT /F1 10 Tf 48 106 Td (Notifications, Account.) Tj ET
+BT /F1 10 Tf 48 94 Td ( ) Tj ET
+BT /F1 10 Tf 48 88 Td (Workflows) Tj ET
+BT /F1 8 Tf 48 36 Td (Project Tracker User Manual  ·  4 / 6) Tj ET
+endstream
+endobj
+11 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 12 0 R /Resources << /Font << /F1 15 0 R >> >> >>
+endobj
+12 0 obj
+<< /Length 5011 >>
+stream
+BT /F1 10 Tf 48 736 Td ( ) Tj ET
+BT /F1 10 Tf 48 730 Td (1. Sign in → Portfolio. Filter by status, RAG, and business unit \(Apply filters\).) Tj ET
+BT /F1 10 Tf 48 718 Td (2. Drill into red/amber projects → Health and Risks.) Tj ET
+BT /F1 10 Tf 48 706 Td (3. Reports: export a pack for steering committees.) Tj ET
+BT /F1 10 Tf 48 694 Td (4. Data quality \(via Admin only if you also hold PMO/admin — executives use project) Tj ET
+BT /F1 10 Tf 48 682 Td (   Quality tabs and portfolio flags\). Watch overdue reports and missing assignees.) Tj ET
+BT /F1 10 Tf 48 670 Td (5. Do not treat operational ticket counts as performance outcomes.) Tj ET
+BT /F1 10 Tf 48 658 Td ( ) Tj ET
+BT /F1 12 Tf 48 652 Td (4.6 HR reviewer) Tj ET
+BT /F1 10 Tf 48 640 Td ( ) Tj ET
+BT /F1 10 Tf 48 634 Td (Capabilities: portfolio; KRA/KPI catalog; calibration; correct locked scorecards; view) Tj ET
+BT /F1 10 Tf 48 622 Td (scorecards per privacy rules; no project create and no Jira stub.) Tj ET
+BT /F1 10 Tf 48 610 Td ( ) Tj ET
+BT /F1 10 Tf 48 604 Td (Sidebar: Dashboard, Portfolio, Projects, Scorecards, Check-ins, Calibration, Annual reviews,) Tj ET
+BT /F1 10 Tf 48 592 Td (Reports, Notifications, Account.) Tj ET
+BT /F1 10 Tf 48 580 Td ( ) Tj ET
+BT /F1 10 Tf 48 574 Td (The Admin sidebar is limited to system admin and PMO. HR reviewers work Calibration,) Tj ET
+BT /F1 10 Tf 48 562 Td (Scorecards, and Annual reviews directly. Catalog edits are performed by PMO with HR) Tj ET
+BT /F1 10 Tf 48 550 Td (agreement \(HR has catalog permission, but the Admin nav requires template permission\).) Tj ET
+BT /F1 10 Tf 48 538 Td ( ) Tj ET
+BT /F1 10 Tf 48 532 Td (Workflows) Tj ET
+BT /F1 10 Tf 48 520 Td ( ) Tj ET
+BT /F1 10 Tf 48 514 Td (1. Agree catalog weights \(100% per role\) with PMO before the cycle starts.) Tj ET
+BT /F1 10 Tf 48 502 Td (2. Calibration: compare rating distributions across teams; record outcomes.) Tj ET
+BT /F1 10 Tf 48 490 Td (3. Correct locked scorecards only with an audit-visible reason.) Tj ET
+BT /F1 10 Tf 48 478 Td (4. Annual reviews: confirm the record is a consolidation, not an auto-rating.) Tj ET
+BT /F1 10 Tf 48 466 Td (5. Protect individual scorecard access — executives should not browse people they do not) Tj ET
+BT /F1 10 Tf 48 454 Td (   manage.) Tj ET
+BT /F1 10 Tf 48 442 Td ( ) Tj ET
+BT /F1 12 Tf 48 436 Td (4.7 PMO administrator) Tj ET
+BT /F1 10 Tf 48 424 Td ( ) Tj ET
+BT /F1 10 Tf 48 418 Td (Capabilities: full governance except the Jira stub: users, templates, catalog, retention,) Tj ET
+BT /F1 10 Tf 48 406 Td (audit, all project controls, assessments, calibration, locked-scorecard correction,) Tj ET
+BT /F1 10 Tf 48 394 Td (portfolio, reports.) Tj ET
+BT /F1 10 Tf 48 382 Td ( ) Tj ET
+BT /F1 10 Tf 48 376 Td (Sidebar: all primary items including Admin.) Tj ET
+BT /F1 10 Tf 48 364 Td ( ) Tj ET
+BT /F1 10 Tf 48 358 Td (Workflows) Tj ET
+BT /F1 10 Tf 48 346 Td ( ) Tj ET
+BT /F1 10 Tf 48 340 Td (1. Admin → Project templates: keep initiation templates and default milestones current.) Tj ET
+BT /F1 10 Tf 48 328 Td (2. Admin → Users & teams: invite users, set roles and managers, create teams.) Tj ET
+BT /F1 10 Tf 48 316 Td (3. Admin → KRA/KPI catalog: approve KRAs/KPIs; keep weights at 100%.) Tj ET
+BT /F1 10 Tf 48 304 Td (4. Admin → Retention: archive/delete policy for old operational data.) Tj ET
+BT /F1 10 Tf 48 292 Td (5. Admin → Audit and Data quality: investigate who changed what; chase missing data.) Tj ET
+BT /F1 10 Tf 48 280 Td (6. Support project managers on In Progress gates, health overrides, and report SLAs.) Tj ET
+BT /F1 10 Tf 48 268 Td ( ) Tj ET
+BT /F1 12 Tf 48 262 Td (4.8 System administrator \(including developer access\)) Tj ET
+BT /F1 10 Tf 48 250 Td ( ) Tj ET
+BT /F1 10 Tf 48 244 Td (Capabilities: PMO capabilities plus Jira adapter \(stub\) and unrestricted operational) Tj ET
+BT /F1 10 Tf 48 232 Td (control. Seed user developer@tracker.local is this role.) Tj ET
+BT /F1 10 Tf 48 220 Td ( ) Tj ET
+BT /F1 10 Tf 48 214 Td (Sidebar: all items including Admin.) Tj ET
+BT /F1 10 Tf 48 202 Td ( ) Tj ET
+BT /F1 10 Tf 48 196 Td (Workflows) Tj ET
+BT /F1 10 Tf 48 184 Td ( ) Tj ET
+BT /F1 10 Tf 48 178 Td (1. Everything in the PMO section.) Tj ET
+BT /F1 10 Tf 48 166 Td (2. Admin → Jira adapter: configuration stub only while JIRA_SYNC_ENABLED is false. Do not) Tj ET
+BT /F1 10 Tf 48 154 Td (   treat it as a live two-way sync.) Tj ET
+BT /F1 10 Tf 48 142 Td (3. Account and user reactivation after deactivation.) Tj ET
+BT /F1 10 Tf 48 130 Td (4. Production: confirm health endpoints /api/health/live and /api/health/ready; never) Tj ET
+BT /F1 10 Tf 48 118 Td (   place AUTH_URL=http://localhost:3000 on Vercel.) Tj ET
+BT /F1 10 Tf 48 106 Td (5. Cron \(platform\): flags, notifications, KPI refresh, report distribution, retention —) Tj ET
+BT /F1 10 Tf 48 94 Td (   operators monitor these; end users see the results as notifications and refreshed KPIs.) Tj ET
+BT /F1 10 Tf 48 82 Td ( ) Tj ET
+BT /F1 8 Tf 48 36 Td (Project Tracker User Manual  ·  5 / 6) Tj ET
+endstream
+endobj
+13 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Contents 14 0 R /Resources << /Font << /F1 15 0 R >> >> >>
+endobj
+14 0 obj
+<< /Length 2596 >>
+stream
+BT /F1 10 Tf 48 736 Td (                                                                      ) Tj ET
+BT /F1 10 Tf 48 728 Td ( ) Tj ET
+BT /F1 14 Tf 48 722 Td (5. Work-type status paths \(reference\)) Tj ET
+BT /F1 10 Tf 48 706 Td ( ) Tj ET
+BT /F1 10 Tf 48 700 Td (Use the workflow buttons on the work item. Illegal transitions are blocked.) Tj ET
+BT /F1 10 Tf 48 688 Td ( ) Tj ET
+BT /F1 10 Tf 48 682 Td (Task / Sub-task / Issue: To Do → In Progress → Blocked or In Review → Done \(or Cancelled\).) Tj ET
+BT /F1 10 Tf 48 670 Td ( ) Tj ET
+BT /F1 10 Tf 48 664 Td (Deliverable: Draft → In Progress → Ready for Review → Rework Required, Accepted, or Rejected) Tj ET
+BT /F1 10 Tf 48 652 Td (→ Closed.) Tj ET
+BT /F1 10 Tf 48 640 Td ( ) Tj ET
+BT /F1 10 Tf 48 634 Td (Risk: Identified → Analyzing → Mitigating / Accepted / Closed → Monitoring as needed.) Tj ET
+BT /F1 10 Tf 48 622 Td ( ) Tj ET
+BT /F1 10 Tf 48 616 Td (Change request: Submitted → Under Review → Approved or Rejected → Implementing → Implemented) Tj ET
+BT /F1 10 Tf 48 604 Td (→ Closed.) Tj ET
+BT /F1 10 Tf 48 592 Td ( ) Tj ET
+BT /F1 10 Tf 48 586 Td (Epic, Milestone, Dependency, Decision: To Do → In Progress → Done \(or Cancelled\).) Tj ET
+BT /F1 10 Tf 48 574 Td ( ) Tj ET
+BT /F1 10 Tf 48 568 Td (Project status: Proposed → Initiating → Planning → In Progress \(gate: manager, sponsor,) Tj ET
+BT /F1 10 Tf 48 556 Td (dates, milestone plan\) → On Hold / At Risk / Completed / Cancelled / Closed.) Tj ET
+BT /F1 10 Tf 48 544 Td ( ) Tj ET
+BT /F1 10 Tf 48 538 Td (                                                                      ) Tj ET
+BT /F1 10 Tf 48 530 Td ( ) Tj ET
+BT /F1 14 Tf 48 524 Td (6. Support) Tj ET
+BT /F1 10 Tf 48 508 Td ( ) Tj ET
+BT /F1 10 Tf 48 502 Td (• Permission errors: ask PMO to change your role or project membership.) Tj ET
+BT /F1 10 Tf 48 490 Td (• Failed saves: retry, then share the on-screen reference ID \(if shown\) and the time of) Tj ET
+BT /F1 10 Tf 48 478 Td (  the error. The UI never shows stack traces or secrets.) Tj ET
+BT /F1 10 Tf 48 466 Td (• Data restore: archived work items from the project Work → Archived list. Full database) Tj ET
+BT /F1 10 Tf 48 454 Td (  restore is an operations task \(see docs/OPERATIONS.md\).) Tj ET
+BT /F1 10 Tf 48 442 Td ( ) Tj ET
+BT /F1 10 Tf 48 436 Td (This manual describes the product as implemented in the Project Tracker application. Jira) Tj ET
+BT /F1 10 Tf 48 424 Td (sync remains optional and deferred.) Tj ET
+BT /F1 10 Tf 48 412 Td ( ) Tj ET
+BT /F1 8 Tf 48 36 Td (Project Tracker User Manual  ·  6 / 6) Tj ET
+endstream
+endobj
+15 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+xref
+0 16
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000147 00000 n 
+0000000274 00000 n 
+0000004563 00000 n 
+0000004690 00000 n 
+0000010070 00000 n 
+0000010197 00000 n 
+0000015145 00000 n 
+0000015273 00000 n 
+0000019901 00000 n 
+0000020030 00000 n 
+0000025094 00000 n 
+0000025223 00000 n 
+0000027872 00000 n 
+trailer << /Size 16 /Root 1 0 R >>
+startxref
+27943
+%%EOF

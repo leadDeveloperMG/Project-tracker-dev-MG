@@ -2,7 +2,7 @@
 
 Standalone Next.js + MongoDB project-governance platform: work tracking, RAG health, deliverable assessments, KRA/KPI scorecards, and executive reporting. Jira sync is optional and deferred.
 
-Design and operations notes: [docs/DESIGN.md](docs/DESIGN.md), [docs/OPERATIONS.md](docs/OPERATIONS.md).
+Design and operations notes: [docs/DESIGN.md](docs/DESIGN.md), [docs/OPERATIONS.md](docs/OPERATIONS.md). User manual (by role, capability, and workflow): [docs/USER-MANUAL.md](docs/USER-MANUAL.md) and [docs/user-manual.pdf](docs/user-manual.pdf).
 
 ## Local setup
 
