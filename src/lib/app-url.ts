@@ -1,3 +1,15 @@
+/** Env keys used to resolve the public origin. Tests may pass a partial object. */
+export type PublicOriginEnv = {
+  AUTH_URL?: string;
+  APP_URL?: string;
+  AUTH_TRUST_HOST?: string;
+  VERCEL?: string;
+  VERCEL_ENV?: string;
+  VERCEL_URL?: string;
+  VERCEL_PROJECT_PRODUCTION_URL?: string;
+  [key: string]: string | undefined;
+};
+
 function withProtocol(value: string) {
   return value.includes("://") ? value : `https://${value}`;
 }
@@ -17,7 +29,7 @@ export function normalizeOrigin(value: string) {
 }
 
 /** Public site origin. On Vercel, ignores AUTH_URL/APP_URL when they still point at localhost. */
-export function resolvePublicOrigin(env: NodeJS.ProcessEnv = process.env) {
+export function resolvePublicOrigin(env: PublicOriginEnv = process.env) {
   const explicit = env.APP_URL || env.AUTH_URL;
   const onVercel = Boolean(env.VERCEL);
   if (explicit && !(onVercel && isLoopbackOrigin(explicit))) {
@@ -32,7 +44,7 @@ export function resolvePublicOrigin(env: NodeJS.ProcessEnv = process.env) {
   return normalizeOrigin(explicit || "http://localhost:3000");
 }
 
-export function applyPublicOriginEnv(env: NodeJS.ProcessEnv = process.env) {
+export function applyPublicOriginEnv(env: PublicOriginEnv = process.env) {
   const origin = resolvePublicOrigin(env);
   env.AUTH_URL = origin;
   env.APP_URL = origin;

@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { applyPublicOriginEnv, isLoopbackOrigin, resolvePublicOrigin } from "./app-url";
+import { applyPublicOriginEnv, isLoopbackOrigin, resolvePublicOrigin, type PublicOriginEnv } from "./app-url";
 
 describe("resolvePublicOrigin", () => {
   it("keeps localhost for local development", () => {
@@ -44,7 +44,7 @@ describe("resolvePublicOrigin", () => {
 
 describe("applyPublicOriginEnv", () => {
   it("overwrites localhost AUTH_URL when running on Vercel", () => {
-    const env = {
+    const env: PublicOriginEnv = {
       VERCEL: "1",
       VERCEL_ENV: "production",
       VERCEL_PROJECT_PRODUCTION_URL: "macrogen.vercel.app",
