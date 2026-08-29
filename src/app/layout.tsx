@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { resolvePublicOrigin } from "@/lib/app-url";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -13,6 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(resolvePublicOrigin()),
   title: "Jira Project Tracker",
   description: "Project governance, delivery assessment, and KRA/KPI reporting",
 };

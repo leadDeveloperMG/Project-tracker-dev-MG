@@ -1,4 +1,7 @@
+import { applyPublicOriginEnv } from "./src/lib/app-url";
 import type { NextConfig } from "next";
+
+applyPublicOriginEnv();
 
 const securityHeaders = [
   { key: "X-Content-Type-Options", value: "nosniff" },

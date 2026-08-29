@@ -2,6 +2,7 @@ import { Resend } from "resend";
 import { connectDB } from "@/lib/db";
 import { Notification } from "@/models/performance";
 import { User } from "@/models/user";
+import { resolvePublicOrigin } from "@/lib/app-url";
 
 export async function notify(opts: {
   userId: string;
@@ -37,7 +38,7 @@ export async function notify(opts: {
         from: process.env.RESEND_FROM ?? "Jira Project Tracker <noreply@example.com>",
         to: user.email,
         subject: opts.title,
-        text: `${opts.body}\n${opts.href ? `${process.env.APP_URL ?? ""}${opts.href}` : ""}`,
+        text: `${opts.body}\n${opts.href ? `${resolvePublicOrigin()}${opts.href}` : ""}`,
       });
       await Notification.updateOne({ userId: opts.userId, title: opts.title }, { emailSent: true }).sort({
         createdAt: -1,

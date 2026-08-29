@@ -1,5 +1,8 @@
 import type { NextAuthConfig } from "next-auth";
 import type { Role } from "@/lib/constants";
+import { applyPublicOriginEnv } from "@/lib/app-url";
+
+applyPublicOriginEnv();
 
 export const authConfig = {
   trustHost: true,

@@ -13,6 +13,7 @@ import { writeAudit } from "@/models/audit";
 import { assertWeightsTotal100, isOperationalKpi } from "@/lib/engines/kpi";
 import { ROLES, type Role } from "@/lib/constants";
 import { oids, runAction, type ActionState } from "@/lib/safe-action";
+import { publicOrigin } from "@/lib/app-url";
 
 export async function createUserAction(formData: FormData) {
   const actor = await requirePermission("manageUsers");
@@ -56,7 +57,7 @@ export async function createUserFormAction(
 ): Promise<ActionState> {
   return runAction(async () => {
     const result = await createUserAction(formData);
-    const origin = process.env.APP_URL ?? process.env.AUTH_URL ?? "";
+    const origin = await publicOrigin();
     if (result.inviteToken) {
       return {
         inviteToken: result.inviteToken,

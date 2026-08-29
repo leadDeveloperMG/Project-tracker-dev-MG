@@ -41,7 +41,7 @@ npm run dev
 |---|---|
 | `MONGODB_URI` | Atlas URI |
 | `AUTH_SECRET` | `openssl rand -base64 32` |
-| `AUTH_URL` / `APP_URL` | `https://your-domain.vercel.app` |
+| `AUTH_URL` / `APP_URL` | Optional on Vercel. Leave unset (or do **not** copy `http://localhost:3000`). The app uses `https://$VERCEL_PROJECT_PRODUCTION_URL` in production and `https://$VERCEL_URL` on preview. Set them only to pin a custom domain, e.g. `https://tracker.yourcompany.com`. |
 | `CRON_SECRET` | Long random string; Vercel Cron sends `Authorization: Bearer <CRON_SECRET>` |
 | `BLOB_READ_WRITE_TOKEN` | Vercel Blob store |
 | `RESEND_API_KEY` / `RESEND_FROM` | Optional email |

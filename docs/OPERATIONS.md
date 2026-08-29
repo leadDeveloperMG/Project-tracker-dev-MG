@@ -19,6 +19,8 @@ Unexpected UI errors never include stack traces. Share the on-screen reference I
 
 Keep `MONGODB_URI`, `AUTH_SECRET`, `CRON_SECRET`, Blob, Resend, and Jira tokens in the host environment (`.env.local` locally, Vercel/Atlas elsewhere). Never commit them.
 
+On Vercel, do not set `AUTH_URL` / `APP_URL` to `http://localhost:3000`. The app rewrites those to the real deployment host (`VERCEL_PROJECT_PRODUCTION_URL` in production, `VERCEL_URL` on preview). To use a custom domain, set both to `https://your-domain.com` in the Vercel project environment.
+
 ## Backups
 
 Use MongoDB Atlas automated backups for the cluster. Restore into a scratch database and run `npm run seed` only on non-production data—seed **wipes** collections.
